@@ -213,6 +213,12 @@ module.exports = function(grunt) {
                 dest: "<%= localCfg.outModulesDir %>/",
                 cwd: localCfg.srcDir
             },
+			unitTestRunner: {
+				expand: true,
+				src: "./unit-test-runner/**/*",
+                dest: "<%= localCfg.outModulesDir %>/",
+                cwd: localCfg.srcDir
+			},
             appLicense: {
                 expand: true,
                 src: ["./LICENSE"],
@@ -482,7 +488,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask("collect-modules-raw-files", [
         "copy:jsLibs",
-        "copy:license"
+        "copy:license",
+		"copy:unitTestRunner",
     ]);
 
     grunt.registerTask("compile-ts", [

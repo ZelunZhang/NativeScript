@@ -1,0 +1,12 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+	<GridLayout cssClass="landingContainer">
+		<Image src="~/tns_modules/unit-test-runner/nativescript.png" stretch="none" cssClass="landingBackground"/>
+
+		<Label text="{{ serverInfo }}" cssClass="landingText"/>
+
+		<Button tap="{{ beginLocalRun }}"
+			text="{{ goToTestsText }}"
+			cssClass="landingButton"
+			visibility="{{ isConnected, isConnected ? 'visible' : 'collapsed' }}"/>
+	</GridLayout>
+</Page>
